@@ -1,0 +1,17 @@
+---
+title: "Not of This World"
+date: 2019-08-04T17:40:30-04:00
+draft: false
+categories:
+  - "Spiritual Warfare"
+---
+
+Every move has an advantage and a disadvantage. It makes one piece stronger and yet it leaves another vulnerable to attack. The knights guard and protect the pawns as they battle for control of the center. A constant balance must occur between structure and dynamics. One must force his opponent to defend and retreat, and must not allow the pawns to become isolated. He protects the king at all costs, while his queen waits for the files to thin out before she begins her domination of the board. One begins to realize that chess is not just another game. It is the art of strategic warfare.
+
+What is there inside man that drives him to wage war? The history of war throughout the ages paints many different reasons why men choose, are forced, or compelled to fight and die in battle. Some causes are nobler than others, some war for money and some for land or honor. Some through the ages have battled in the name of love and some out of greed and domination. History tells us of a young Hannibal Barka, at the age of only ten years, being forced to watch his father offer human sacrifices to Baal of the Furnace, and swearing an oath to devote his life to the destruction of Rome. Those images from his youth would shape one of the most brilliant and sadistic minds the world has ever known.
+
+No war has failed to leave its mark on the rest of human history. The images of Auschwitz and the gas chambers that destroyed millions of humans leave us numb and searching for answers to questions that we do not even have. Yet, not all the senseless killing and genocide throughout the history of humanity compare with the war that Satan waged against every one of us. It is the battle for the souls of humankind and the victims of this war are more numerous than all other wars combined. The enemy is on every front, speaks every language, and can even be members of our own household (Matthew 10:34-37). The enemy will stop at nothing to blind us from the reality that victory has already been accomplished by the crucified and now risen Christ (Revelation 12:10). He says, “peace” when there is no peace, gives false hope, empty promises, and deceives millions into believing that they are against him.
+
+Meanwhile, they carry out his deception and perpetuate his lies. The sinner’s prayer—just ask Jesus into your heart and you will be saved—the pagan rituals of some denominations, ecclesiastical systems of church government that usurp the authority of Christ, and the creation of denominationalism, all repeat the very first words he spoke to humanity, “Did God really say?” (Genesis 3:1).
+
+“Our struggle is not against flesh and blood, but against the rulers, against the authorities, against the powers of this dark world and against the spiritual forces of evil in the heavenly realms” (Ephesians 6:12). We do not battle to defend our king at all costs. Instead, we march under the blood stained banner of a king who gave his own life for his subjects. We wrestle not with the doubt and fear of the outcome of war. Instead, we proclaim the victory that he already accomplished. So, while Muslim men send their sons off to die for a false god, a lie, we marvel and proclaim the truth that the one true God of heaven and earth has sent his own Son to die for us all. His kingdom is not of this world (John 18:36).

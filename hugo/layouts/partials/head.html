@@ -1,0 +1,39 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://stats.g.doubleclick.net">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104168432-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-104168432-1');
+</script>
+
+
+<!-- JS & CSS -->
+<!-- <link rel="stylesheet" type="text/css" href="/design/{{ .Site.Data.webpack_assets.app.css }}"> -->
+{{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" ) }}
+{{ $style := resources.Get "styles.scss" | resources.ToCSS $options | resources.Fingerprint}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+<!-- META TAGS -->
+<title>{{ .Title }}</title>
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+
+{{ block "meta" . }}
+{{ partial "meta.html" . }}
+{{ end }}
+
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Extras -->
+{{ block "scripts" . }}
+
+{{ end }}

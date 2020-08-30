@@ -1,0 +1,27 @@
+.sermon-details {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.time-to-read {
+  margin-left: 3rem;
+}
+
+.scripture-reference a {
+  color: var(--white);
+}
+
+.sermon-audio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  audio {
+    margin-left: 0.75rem;
+  }
+}
+
+.sermon-list {
+  min-height: 60vh;
+}

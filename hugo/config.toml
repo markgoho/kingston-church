@@ -1,0 +1,4 @@
+baseURL = "https://kingstonnychurchofchrist.org/"
+languageCode = "en-us"
+title = "Kingston NY Church of Christ"
+publishDir = "../public"

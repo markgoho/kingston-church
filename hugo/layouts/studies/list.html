@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="studies-wrapper content-wrapper list-container">
+  <ul class="studies-list">
+    {{ range .Pages.Reverse }}
+    <li class="study">
+      <a class="study-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <p>{{ .Params.Description }}</p>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

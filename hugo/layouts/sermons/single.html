@@ -1,0 +1,30 @@
+{{ define "hero" }}
+<div class="tag-line">{{ .Title }}</div>
+<div class="sermon-details">
+  <div class="scripture-reference">
+    <a
+      rel="noopener noreferrer"
+      target="_blank"
+      href="https://www.biblegateway.com/passage/?search={{- .Params.scripture_reference -}}&version=NIV">
+      {{ .Params.scripture_reference }}
+    </a>
+  </div>
+  {{ if gt (len .Content) 0 }}
+  <div class="time-to-read">Reading Time: {{ .ReadingTime }} minutes</div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ define "main" }}
+<article class="sermon content-wrapper">
+  <div class="sermon-audio">
+    <h4>Listen to the sermon</h4>
+    <audio controls src="{{ .Params.sermon_audio }}">
+      Your browser does not support the
+      <code>audio</code> element.
+    </audio>
+  </div>
+</article>
+
+{{ partial "post-nav.html" . }}
+{{ end }}

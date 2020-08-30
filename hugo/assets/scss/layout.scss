@@ -1,0 +1,58 @@
+body {
+  background-attachment: fixed, scroll;
+  background-color: var(--darkest);
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.content-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+main {
+  background-color: var(--lighter);
+  color: var(--black);
+}
+
+article.content-wrapper,
+.list-container {
+  padding: 3rem 1rem;
+}
+
+.bible-verse {
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+@media screen and (min-width: 975px) {
+  body {
+    background-image: url("/images/book-grayscale.webp");
+  }
+}
+
+blockquote {
+  margin-left: 3rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--darkest);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.footnotes {
+  font-size: 0.8rem;
+}
+
+.sermon,
+.lesson {
+  min-height: 50vh;
+}
+
+.full-width {
+  width: 100%;
+}

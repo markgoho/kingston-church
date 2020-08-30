@@ -1,0 +1,77 @@
+---
+label: sermon
+hide_body: true
+fields:
+- type: datetime
+  name: date
+  label: Sermon date
+- type: text
+  name: scripture_reference
+  label: Scripture reference
+- type: text
+  name: title
+  label: Sermon title
+- name: sermon_audio
+  type: text
+  config:
+    required: false
+  label: Sermon audio
+  description: The cloudinary url where the mp3 is hosted
+pages:
+- hugo/content/sermons/colossians/in-the-household-children-fathers-part-1.md
+- hugo/content/sermons/colossians/in-the-household-children-fathers-part-2.md
+- hugo/content/sermons/colossians/in-the-household-slaves-masters.md
+- hugo/content/sermons/colossians/in-the-household-wives-husbands-1.md
+- hugo/content/sermons/colossians/in-the-household-wives-husbands-2.md
+- hugo/content/sermons/colossians/in-the-household-wives-husbands-3.md
+- hugo/content/sermons/colossians/in-the-household-wives-husbands-5b.md
+- hugo/content/sermons/colossians/in-the-household-wives-husbands-part-3-1.md
+- hugo/content/sermons/colossians/in-the-household-wives-husbands.md
+- hugo/content/sermons/colossians/the-new-man-among-the-elect-part-5c.md
+- hugo/content/sermons/colossians/the-new-man-toward-the-outsiders-4-2-6.md
+- hugo/content/sermons/john/i-am-the-bread-of-life-part-1.md
+- hugo/content/sermons/john/i-am-the-bread-of-life-part-2.md
+- hugo/content/sermons/john/i-am-the-bread-of-life-part-3.md
+- hugo/content/sermons/john/i-am-the-bread-of-life-part-4.md
+- hugo/content/sermons/john/introduction-to-john.md
+- hugo/content/sermons/john/john-s-commentary-god-s-one-only-son.md
+- hugo/content/sermons/john/out-of-galilee-back-to-jerusalem.md
+- hugo/content/sermons/john/power-to-become-children-of-god.md
+- hugo/content/sermons/john/sign-1-changing-water-to-wine.md
+- hugo/content/sermons/john/sign-2-healing-of-an-official-s-son.md
+- hugo/content/sermons/john/sign-3-healing-of-a-lame-man-part-1.md
+- hugo/content/sermons/john/sign-3-healing-of-a-lame-man-part-2.md
+- hugo/content/sermons/john/sign-4-feeding-of-five-thousand.md
+- hugo/content/sermons/john/sign-5-walking-on-water.md
+- hugo/content/sermons/john/the-baptist-reveals-the-messiah-part-1.md
+- hugo/content/sermons/john/the-baptist-reveals-the-messiah-part-2.md
+- hugo/content/sermons/john/the-baptist-s-testing-about-the-messiah.md
+- hugo/content/sermons/john/the-eternal-existence-of-the-word-part-1.md
+- hugo/content/sermons/john/the-eternal-existence-of-the-word-part-3.md
+- hugo/content/sermons/john/the-eternal-existence-of-the-world-part-2.md
+- hugo/content/sermons/john/the-first-disciples-of-the-messiah.md
+- hugo/content/sermons/john/the-messiah-will-be-the-savior-of-the-world-part-1.md
+- hugo/content/sermons/john/the-messiah-will-be-the-savior-of-the-world-part-2.md
+- hugo/content/sermons/john/the-messiah-will-bring-worship-in-spirit-truth-part-1.md
+- hugo/content/sermons/john/the-messiah-will-bring-worship-in-spirit-truth-part-2.md
+- hugo/content/sermons/john/the-messiah-will-give-living-water-part-1.md
+- hugo/content/sermons/john/the-messiah-will-give-living-water-part-2.md
+- hugo/content/sermons/john/the-messiah-will-give-living-water-part-3.md
+- hugo/content/sermons/john/the-new-birth-lifting-up-the-son-of-man-part-1.md
+- hugo/content/sermons/john/the-new-birth-lifting-up-the-son-of-man-part-2.md
+- hugo/content/sermons/john/the-new-birth-lifting-up-the-son-of-man-part-4.md
+- hugo/content/sermons/john/the-new-birth-lifting-up-the-son-of-man-part-5.md
+- hugo/content/sermons/john/the-new-birth-lifting-up-the-son-of-man.md
+- hugo/content/sermons/john/the-one-coming-from-above-is-above-all.md
+- hugo/content/sermons/john/the-son-is-life-giver-judge-part-1.md
+- hugo/content/sermons/john/the-son-is-life-giver-judge-part-2.md
+- hugo/content/sermons/john/the-son-is-life-giver-judge-part-3-1.md
+- hugo/content/sermons/john/the-son-is-life-giver-judge-part-3.md
+- hugo/content/sermons/john/the-son-is-life-giver-judge-part-4.md
+- hugo/content/sermons/john/the-temple-of-his-body.md
+- hugo/content/sermons/john/the-word-became-fleash-revealed-his-glory-part-4.md
+- hugo/content/sermons/john/the-word-became-flesh-revealed-his-glory-part-1.md
+- hugo/content/sermons/john/the-word-became-flesh-revealed-his-glory-part-3.md
+- hugo/content/sermons/john/the-word-became-flesh-revealed-his-glory-part-5.md
+- hugo/content/sermons/john/the-word-became-flesh-revealed-his-glory-part2.md
+- hugo/content/sermons/john/witness-of-the-true-light.md

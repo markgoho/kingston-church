@@ -1,0 +1,20 @@
+{{ define "hero" }}
+<h1 class="tag-line">{{ .Title }}</h1>
+{{ if not (isset .Params "article_pdf") }}
+<div class="lesson-read-time">Reading Time: {{ .ReadingTime }} minutes</div>
+{{ end }}
+{{ end }}
+
+{{ define "main" }}
+<article class="lesson content-wrapper">
+  <section>
+    {{ if isset .Params "article_pdf" }}
+    <h4><a download href="{{ .Params.article_pdf }}">Read {{ .Title }} now</a></h4>
+    {{ else }}
+    {{ .Content }}
+    {{ end }}
+  </section>
+</article>
+
+{{ partial "post-nav.html" . }}
+{{ end }}

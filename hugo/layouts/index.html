@@ -1,0 +1,49 @@
+{{ define "head-scripts" }}
+{{ end }}
+
+{{ define "hero"}}
+<div class="tag-line">Reaching Out</div>
+<div class="tag-line">Reflecting Christ</div>
+<div class="tag-line">Renewing Lives</div>
+{{ end }}
+
+{{ define "main"}}
+<div class="home-content">
+  <div class="content-wrapper">
+    {{ .Content }}
+
+    <h3>Scripture Focus</h3>
+    <ul>
+      <li>Sunday 10am: {{ .Param "sunday.bibleStudy" }}</li>
+      <li>Sunday 11am: {{ .Param "sunday.worship" }}</li>
+      <li>Wednesday 7pm: {{ .Param "wednesday.bibleStudy" }}</li>
+    </ul>
+
+  </div>
+
+</div>
+
+<div class="audio-sermons">
+  <h3>Audio Sermons</h3>
+  <a href="/sermons/">Listen Now</a>
+</div>
+
+<div class="visit-us">
+  <div class="content-wrapper">
+    <h2>Visit Us this Sunday</h2>
+    <div class="visitation-details">
+      <div class="times">
+        Sundays at 10:00am <br>
+        Wednesdays at 7:00pm
+      </div>
+      <div class="address">
+        <a href="https://goo.gl/maps/zeNQHdTgJDGJR9hM8">
+          71 Albany Avenue <br>
+          Kingston, NY 12401
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}
