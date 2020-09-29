@@ -5,7 +5,7 @@ sunday:
   bibleStudy: 1 Corinthians
   worship: John
 wednesday:
-  bibleStudy: Genesis
+  bibleStudy: Isaiah
 
 ---
 **Welcome to the Church of Christ in Kingston, NY!** If you are looking to learn more about the teachings of the Bible, then you’ve come to the right place. Within the pages of this website, there is a vast collection of knowledge and encouragement for both the seasoned Christian, as well as the searching heart. We hope everything you find will be beneficial to you and your walk with God, and we encourage you to let us know if we can be of help to you in any way.

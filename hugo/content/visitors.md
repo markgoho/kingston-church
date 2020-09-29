@@ -5,7 +5,7 @@ description: What visitors should know about the Kingston NY Church of Christ
 ---
 First and foremost, visitors can expect to be greeted with a kind welcome. We strive to make everyone feel like family.
 
-Our worship service begins by lifting our voices up to God in song. We do this to both glorify Him and to encourage one another. All of our singing is done Acappella, like that of the early church.
+Our worship service begins by lifting our voices up to God in song. We do this to both glorify Him and to encourage one another. All of our singing is done A Cappella, like that of the early church.
 
 Between songs, we have times of collective prayer led by one of our members. We also take part in the Lord’s Supper, or Communion, which is a weekly reminder of what Christ did for us on the cross, and the relationship we have with God because of this great sacrifice.
 
