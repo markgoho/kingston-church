@@ -3,6 +3,8 @@ title: Visitors
 description: What visitors should know about the Kingston NY Church of Christ
 
 ---
+**Because of Covid-19, we have moved all of our gatherings (worship, Bible study) to [WebEx](https://schuylersignor.my.webex.com/meet/babbootoo)**.
+
 First and foremost, visitors can expect to be greeted with a kind welcome. We strive to make everyone feel like family.
 
 Our worship service begins by lifting our voices up to God in song. We do this to both glorify Him and to encourage one another. All of our singing is done A Cappella, like that of the early church.
@@ -15,4 +17,3 @@ After the singing is complete, a sermon is delivered by our preacher. This is th
 
 There is nothing showy or elaborate about our worship services. We are not a social club or a recreation center. We do not strive to entertain or impress. We simply meet together as we are called to do in order to encourage and love one another.
 
-{{< map >}}
