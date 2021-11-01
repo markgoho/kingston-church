@@ -8,7 +8,7 @@ rules:
   # Override stylelint-config-standard - we only use CSS comments for annotations that don't warrant an empty line
   comment-empty-line-before: null
   # Follow best practices
-  # font-family-name-quotes: always-where-recommended
+  font-family-name-quotes: always-where-required
   # https://stackoverflow.com/a/34383157/467582
   function-url-quotes: always
   # https://www.w3.org/TR/selectors/#attribute-selectors
@@ -204,7 +204,7 @@ rules:
     - visibility
     - will-change
     - z-index
-  declaration-property-unit-whitelist:
+  declaration-property-unit-allowed-list:
     font-size:
       - "rem"
       - "px"
@@ -243,7 +243,7 @@ rules:
   # http://vanseodesign.com/css/sass-mixin-or-extend/
   # Besides performance, @extend actually *changes* the selector precedence by creating a compound
   # selector, which can lead to ambiguous results.
-  at-rule-blacklist:
+  at-rule-disallowed-list:
     - extend
   # Extremely useful for typos, and anything emergent can be ignored by this rule
   property-no-unknown:
@@ -276,7 +276,7 @@ rules:
   function-url-no-scheme-relative: true
   # TODO: and FIXME: warnings are super useful because they remind us that we should address these
   # within our codebase
-  comment-word-blacklist:
+  comment-word-disallowed-list:
     - - /^TODO:/
       - /^FIXME:/
     - severity: warning

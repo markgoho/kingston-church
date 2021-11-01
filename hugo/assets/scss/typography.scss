@@ -28,7 +28,7 @@
 }
 
 @font-face {
-  font-family: "Lato";
+  font-family: Lato;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -57,7 +57,7 @@
 }
 
 @font-face {
-  font-family: "Lato";
+  font-family: Lato;
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -86,7 +86,7 @@
 }
 
 @font-face {
-  font-family: "Lato";
+  font-family: Lato;
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -115,7 +115,7 @@
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: Noto serif;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -127,7 +127,7 @@
 }
 
 @font-face {
-  font-family: "Noto Serif";
+  font-family: Noto serif;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -138,27 +138,12 @@
   unicode-range: U+0370-03FF;
 }
 
-// @font-face {
-//   font-family: "Noto Serif";
-//   font-style: normal;
-//   font-weight: 400;
-//   font-display: swap;
-//   src: local("Noto Serif"), local("NotoSerif"),
-//     url(https://fonts.gstatic.com/s/notoserif/v8/ga6Iaw1J5X9T9RW6j9bNfFsWaCi_.woff2)
-//       format("woff2");
-//   unicode-range: U+1F00-1FFF;
-// }
-
-// .greek {
-//   font-family: "Noto Serif";
-// }
-
 html {
   font-size: 20px;
 }
 
 body {
-  font-family: Lato, "Noto Serif", Arial, Helvetica, sans-serif;
+  font-family: Lato, Noto serif, Arial, Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.5;
 }

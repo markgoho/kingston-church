@@ -8,12 +8,12 @@
   border-top: 3px solid var(--darker);
 }
 
-.post-nav__caption {
+.post-nav-caption {
   font-size: 0.5rem;
   text-transform: uppercase;
 }
 
-.post-nav__item--next {
+.post-nav-item-next {
   text-align: right;
 }
 
@@ -21,11 +21,11 @@
   color: inherit;
 }
 
-.post-nav__item {
+.post-nav-item {
   max-width: 175px;
 }
 
-.post-nav__link {
+.post-nav-link {
   display: block;
 
   &:hover {
@@ -33,7 +33,7 @@
   }
 }
 
-.post-nav__post-title {
+.post-nav-post-title {
   margin: 0;
   font-size: 0.75rem;
 }
@@ -43,20 +43,20 @@
     padding: 0;
   }
 
-  .post-nav__link {
+  .post-nav-link {
     margin: 16px 0;
     padding: 4px 8px;
   }
 
-  .post-nav__item {
+  .post-nav-item {
     max-width: 300px;
   }
 
-  .post-nav__caption {
+  .post-nav-caption {
     font-size: 0.75rem;
   }
 
-  .post-nav__post-title {
+  .post-nav-post-title {
     font-size: 1rem;
   }
 }

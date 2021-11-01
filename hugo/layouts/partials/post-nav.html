@@ -1,18 +1,18 @@
 {{- if or (.PrevInSection) (.NextInSection) }}
 <div class="post-nav">
 	{{- if .PrevInSection }}
-	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="{{ .PrevInSection.RelPermalink }}" rel="prev">
-      <span class="post-nav__caption">Previous {{ .Type | singularize }}</span>
-      <p class="post-nav__post-title">{{ .PrevInSection.Title }}</p>
+	<div class="post-nav-item post-nav-item--prev">
+		<a class="post-nav-link" href="{{ .PrevInSection.RelPermalink }}" rel="prev">
+      <span class="post-nav-caption">Previous {{ .Type | singularize }}</span>
+      <p class="post-nav-post-title">{{ .PrevInSection.Title }}</p>
     </a>
 	</div>
 	{{- end }}
 	{{- if .NextInSection }}
-	<div class="post-nav__item post-nav__item--next {{ if not .PrevInSection -}} full-width {{- end -}}">
-		<a class="post-nav__link" href="{{ .NextInSection.RelPermalink }}" rel="next">
-      <span class="post-nav__caption">Next {{ .Type | singularize }}</span>
-      <p class="post-nav__post-title">{{ .NextInSection.Title }}</p>
+	<div class="post-nav-item post-nav-item-next {{ if not .PrevInSection -}} full-width {{- end -}}">
+		<a class="post-nav-link" href="{{ .NextInSection.RelPermalink }}" rel="next">
+      <span class="post-nav-caption">Next {{ .Type | singularize }}</span>
+      <p class="post-nav-post-title">{{ .NextInSection.Title }}</p>
     </a>
 	</div>
 	{{- end }}
