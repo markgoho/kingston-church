@@ -19,6 +19,7 @@ fields:
   description: The cloudinary url where the mp3 is hosted
 pages:
 - hugo/content/sermons/Galatians/a-revelation-of-jesus-christ.md
+- hugo/content/sermons/Galatians/blessed-in-abraham-or-cursed-by-law.md
 - hugo/content/sermons/Galatians/by-hearing-of-faith.md
 - hugo/content/sermons/Galatians/crucified-with-christ.md
 - hugo/content/sermons/Galatians/false-brothers-spy-out-our-freedom-part-1.md
