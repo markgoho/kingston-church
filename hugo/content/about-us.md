@@ -24,3 +24,5 @@ Schuyler has been our full-time preacher for the past 18 years. He has a Bachelo
 **The Church** Jesus established the Church as an earthly kingdom of believers, of which he is the head (Colossians 1:18). All who are baptized into Christ have been added to his body, or the Church, or the Kingdom of God (1 Corinthians 12:12-14; Romans 12:5). The terms are interchangeable. To be united with Christ is to be united with other members of his body, other Christians.
 
 We are confident we are hearing the same message as first-century listeners. Nevertheless, Scripture is always our only and final authority.
+
+Meeting at 80 Loughran Ln Highland NY 12528.
