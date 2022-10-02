@@ -2,8 +2,8 @@
 title: Kingston Church
 description: Church of Christ in Kingston NY
 sunday:
-  bibleStudy: 1 Peter
-  worship: John
+  bibleStudy: Hebrews
+  worship: 1 Peter
 wednesday:
   bibleStudy: Isaiah
 
