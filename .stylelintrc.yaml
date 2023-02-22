@@ -1,10 +1,8 @@
-extends: stylelint-config-standard
+extends: stylelint-config-standard-scss
 plugins:
   - stylelint-scss
   - stylelint-order
 rules:
-  # Wrap lines greater than 120 characters
-  max-line-length: 120
   # Override stylelint-config-standard - we only use CSS comments for annotations that don't warrant an empty line
   comment-empty-line-before: null
   # Follow best practices
@@ -14,9 +12,6 @@ rules:
   # https://www.w3.org/TR/selectors/#attribute-selectors
   # http://stackoverflow.com/q/3851091
   selector-attribute-quotes: always
-  # Double-quotes are our convention throughout our codebase within (S)CSS. They also reflect how
-  # attribute strings are normally quoted within the DOM.
-  string-quotes: double
   order/order:
     - - type: at-rule
         hasBlock: false
@@ -281,7 +276,6 @@ rules:
       - /^FIXME:/
     - severity: warning
   # Part of google's style guide
-  number-leading-zero: always
   at-rule-empty-line-before:
     - always
     - except:
@@ -290,11 +284,6 @@ rules:
       ignore:
         - after-comment
       ignoreAtRules:
-        - else
-  block-closing-brace-newline-after:
-    - always
-    - ignoreAtRules:
-        - if
         - else
 
   # SCSS naming patterns, just like our CSS conventions above.
