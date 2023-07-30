@@ -3,7 +3,6 @@ title: Contact Us
 description: Ways to contact the Kingston NY Church of Christ
 
 ---
-**Because of Covid-19, we have moved all of our gatherings (worship, Bible study) to [WebEx](https://schuylersignor.my.webex.com/meet/babbootoo)**.
 
 We welcome any comments or questions you may have.
 
