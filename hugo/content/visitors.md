@@ -3,7 +3,6 @@ title: Visitors
 description: What visitors should know about the Kingston NY Church of Christ
 
 ---
-**Because of Covid-19, we have moved all of our gatherings (worship, Bible study) to** [**WebEx**](https://schuylersignor.my.webex.com/meet/babbootoo).
 
 First and foremost, visitors can expect to be greeted with a kind welcome. We strive to make everyone feel like family.
 
