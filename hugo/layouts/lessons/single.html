@@ -1,5 +1,5 @@
 {{ define "hero" }}
-<h1 class="tag-line">{{ .Title }}</h1>
+<h1 class="tag-line" style="view-transition-name: post-{{ .Title | md5 }};">{{ .Title }}</h1>
 {{ if not (isset .Params "article_pdf") }}
 <div class="lesson-read-time">Reading Time: {{ .ReadingTime }} minutes</div>
 {{ end }}

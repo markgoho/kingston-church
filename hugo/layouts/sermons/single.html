@@ -1,5 +1,5 @@
 {{ define "hero" }}
-<div class="tag-line">{{ .Title }}</div>
+<h1 class="tag-line" style="view-transition-name: post-{{ .Title | md5 }};">{{ .Title }}</h1>
 <div class="sermon-details">
   <div class="scripture-reference">
     <a

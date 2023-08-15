@@ -4,7 +4,7 @@
 	<div class="post-nav-item post-nav-item--prev">
 		<a class="post-nav-link" href="{{ .PrevInSection.RelPermalink }}" rel="prev">
       <span class="post-nav-caption">Previous {{ .Type | singularize }}</span>
-      <p class="post-nav-post-title">{{ .PrevInSection.Title }}</p>
+      <p class="post-nav-post-title" style="view-transition-name: post-{{ .PrevInSection.Title | md5 }};">{{ .PrevInSection.Title }}</p>
     </a>
 	</div>
 	{{- end }}
@@ -12,7 +12,7 @@
 	<div class="post-nav-item post-nav-item-next {{ if not .PrevInSection -}} full-width {{- end -}}">
 		<a class="post-nav-link" href="{{ .NextInSection.RelPermalink }}" rel="next">
       <span class="post-nav-caption">Next {{ .Type | singularize }}</span>
-      <p class="post-nav-post-title">{{ .NextInSection.Title }}</p>
+      <p class="post-nav-post-title" style="view-transition-name: post-{{ .NextInSection.Title | md5 }};">{{ .NextInSection.Title }}</p>
     </a>
 	</div>
 	{{- end }}

@@ -3,7 +3,7 @@
   <ul>
     {{ range .Pages.ByTitle }}
     <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <a href="{{ .RelPermalink }}" style="view-transition-name: post-{{ .Title | md5 }};">{{ .Title }}</a>
     </li>
     {{ end }}
   </ul>

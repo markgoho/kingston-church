@@ -3,7 +3,7 @@
   <ul class="studies-list">
     {{ range .Pages.Reverse }}
     <li class="study">
-      <a class="study-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <a class="study-title" href="{{ .RelPermalink }}" style="view-transition-name: post-{{ .Title | md5 }};">{{ .Title }}</a>
       <p>{{ .Params.Description }}</p>
     </li>
     {{ end }}
