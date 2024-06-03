@@ -11,3 +11,7 @@
 @import "./scss/shortcodes";
 @import "./scss/studies";
 @import "./scss/navigation";
+
+@view-transition {
+  navigation: auto;
+}
