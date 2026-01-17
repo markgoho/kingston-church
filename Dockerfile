@@ -18,8 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 # Configure git to trust the workspace directory to avoid ownership errors in GitHub Actions
-RUN git config --global --add safe.directory /__w/dod-db/dod-db && \
-  git config --system --add safe.directory /__w/dod-db/dod-db && \
+RUN git config --global --add safe.directory /__w/kingston-church/kingston-church && \
+  git config --system --add safe.directory /__w/kingston-church/kingston-church && \
   git config --system --add core.quotepath false
 
 # Install Node.js 22.x (required by Firebase Functions)
@@ -46,8 +46,6 @@ RUN echo "Bun version: $(bun --version)"
 RUN echo "Hugo version: $(hugo version)"
 RUN echo "Sass version: $(sass --version)"
 RUN echo "Node.js version: $(node --version)"
-
-# test trigger
 
 # Set the working directory for when the container starts
 WORKDIR /workspace
