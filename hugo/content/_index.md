@@ -19,3 +19,7 @@ Remember in prayer those with spiritual struggles and those absent from our regu
 Sunday morning in the book of John, we see Jesus is God and the reality that He was Israel's fulfillment in the old testament scriptures. Because of Israel's rejection of Him, all people of all nations can now call upon the name of Jesus calling Him, "my Lord and my God" as Thomas did. Whether you accept Him or reject Him, we are all going to answer to Him when we pass from this life.  Join us.
 
 Every first Wednesday of the month will be a singing night. Join us as we encourage one another to learn new songs and praise God.
+
+### Free At-Home Bible Study
+
+We invite you to take a free at-home Bible study course. This is a great opportunity to learn more about God's Word at your own pace in the comfort of your home. [Request your free study materials from House to House](https://www.housetohouse.com/study/).
