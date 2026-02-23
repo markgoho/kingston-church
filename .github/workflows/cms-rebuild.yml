@@ -17,7 +17,7 @@ jobs:
         run: bun install firebase-admin
 
       - name: Fetch content from Firestore
-        run: bun .github/scripts/fetch-firestore-content.mjs
+        run: bun .github/scripts/fetch-firestore-content.ts
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 

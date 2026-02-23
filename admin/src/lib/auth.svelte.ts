@@ -1,4 +1,3 @@
-// eslint-disable-next-line n/no-missing-import -- $lib is a SvelteKit alias
 import { auth, database } from '$lib/firebase';
 import {
 	GoogleAuthProvider,
