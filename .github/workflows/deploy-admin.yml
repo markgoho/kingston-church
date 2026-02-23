@@ -11,12 +11,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}:master
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
         run: cd admin && bun install --frozen-lockfile
@@ -24,8 +23,7 @@ jobs:
       - name: Build admin app
         run: cd admin && bun run build
 
-      - name: Deploy to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
