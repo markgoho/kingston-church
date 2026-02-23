@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { database } from '$lib/firebase';
+	import { publishState } from '$lib/publish-state.svelte.ts';
 	import { doc, getDoc, setDoc } from 'firebase/firestore';
 	import { untrack } from 'svelte';
 
@@ -43,6 +44,7 @@
 			try {
 				await setDoc(doc(database, 'content', 'homepage'), values, { merge: true });
 				saveStatus = 'Saved';
+				publishState.hasUnpublishedChanges = true;
 				setTimeout(() => { saveStatus = ''; }, 2000);
 			} catch {
 				saveStatus = 'Error saving';

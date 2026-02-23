@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { authState, login, logout } from '$lib/auth.svelte.ts';
 	import { database } from '$lib/firebase';
+	import { publishState } from '$lib/publish-state.svelte.ts';
 	import { doc, getDoc } from 'firebase/firestore';
 	import ScriptureFocusForm from '$lib/components/ScriptureFocusForm.svelte';
 	import CurrentEventsForm from '$lib/components/CurrentEventsForm.svelte';
@@ -35,6 +36,7 @@
 
 			if (response.ok || response.status === 204) {
 				publishStatus = 'Build triggered! Site will update in a few minutes.';
+				publishState.hasUnpublishedChanges = false;
 			} else {
 				publishStatus = `Error: GitHub API returned ${response.status}`;
 			}
@@ -83,6 +85,11 @@
 			<section class="card publish-card">
 				<h2>Publish Changes</h2>
 				<p>Changes are saved automatically. Click Publish to rebuild and deploy the website.</p>
+				{#if publishState.hasUnpublishedChanges}
+					<div class="unpublished-banner">
+						You have unpublished changes. Click Publish to update the website!
+					</div>
+				{/if}
 				<div class="actions">
 					<button class="publish-btn" onclick={publish} disabled={publishing}>
 						{publishing ? 'Publishing...' : 'Publish to Website'}
@@ -216,6 +223,17 @@
 	.publish-card p {
 		font-size: 0.875rem;
 		color: #57534e;
+		margin-bottom: 1rem;
+	}
+
+	.unpublished-banner {
+		background: #fef3c7;
+		border: 1px solid #f59e0b;
+		color: #92400e;
+		padding: 0.625rem 1rem;
+		border-radius: 6px;
+		font-size: 0.875rem;
+		font-weight: 500;
 		margin-bottom: 1rem;
 	}
 

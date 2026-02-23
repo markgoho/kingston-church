@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { database } from '$lib/firebase';
+	import { publishState } from '$lib/publish-state.svelte.ts';
 	import { doc, getDoc, setDoc } from 'firebase/firestore';
 	import { untrack } from 'svelte';
 
@@ -36,6 +37,7 @@ Every first Wednesday of the month will be a singing night. Join us as we encour
 			try {
 				await setDoc(doc(database, 'content', 'homepage'), { currentEvents: value }, { merge: true });
 				saveStatus = 'Saved';
+				publishState.hasUnpublishedChanges = true;
 				setTimeout(() => { saveStatus = ''; }, 2000);
 			} catch {
 				saveStatus = 'Error saving';
