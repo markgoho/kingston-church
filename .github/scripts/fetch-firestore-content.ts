@@ -32,10 +32,10 @@ if (snapshot.exists) {
 title: Kingston Church
 description: Church of Christ in Kingston NY
 sunday:
-  bibleStudy: ${sundayBibleStudy}
-  worship: ${sundayWorship}
+  bibleStudy: "${sundayBibleStudy}"
+  worship: "${sundayWorship}"
 wednesday:
-  bibleStudy: ${wednesdayBibleStudy}
+  bibleStudy: "${wednesdayBibleStudy}"
 
 ---`;
 
