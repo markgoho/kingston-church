@@ -13,8 +13,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install firebase-admin
-        run: bun install firebase-admin
+      - name: Install dependencies
+        run: bun install
 
       - name: Fetch content from Firestore
         run: bun .github/scripts/fetch-firestore-content.ts
