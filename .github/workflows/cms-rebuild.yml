@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install firebase-admin
-        run: npm install firebase-admin
+        run: bun install firebase-admin
 
       - name: Fetch content from Firestore
-        run: node .github/scripts/fetch-firestore-content.mjs
+        run: bun .github/scripts/fetch-firestore-content.mjs
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
