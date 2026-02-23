@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "admin/**"
+      - ".firebaserc"
       - ".github/workflows/deploy-admin.yml"
     branches:
       - master
