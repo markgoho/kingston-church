@@ -15,8 +15,8 @@ Every first Wednesday of the month will be a singing night. Join us as we encour
 	async function load() {
 		const reference = doc(database, 'content', 'homepage');
 		const snap = await getDoc(reference);
-		if (snap.exists()) {
-			currentEvents = snap.data().currentEvents ?? defaultCurrentEvents;
+		if (snap.exists() && snap.data().currentEvents) {
+			currentEvents = snap.data().currentEvents;
 		} else {
 			currentEvents = defaultCurrentEvents;
 			await setDoc(reference, { currentEvents: defaultCurrentEvents }, { merge: true });
