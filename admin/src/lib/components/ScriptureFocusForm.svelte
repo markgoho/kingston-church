@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { database } from '$lib/firebase';
 	import { doc, getDoc, setDoc } from 'firebase/firestore';
+	import { untrack } from 'svelte';
 
 	let sundayBibleStudy = $state('');
 	let sundayWorship = $state('');
 	let wednesdayBibleStudy = $state('');
-	let saving = $state(false);
-	let status = $state('');
+	let loaded = $state(false);
+	let saveStatus = $state('');
 
 	const defaults = {
 		sundayBibleStudy: 'Hebrews',
@@ -28,30 +29,39 @@
 			wednesdayBibleStudy = defaults.wednesdayBibleStudy;
 			await setDoc(reference, defaults, { merge: true });
 		}
+		loaded = true;
 	}
 
-	async function save() {
-		saving = true;
-		status = '';
-		try {
-			await setDoc(
-				doc(database, 'content', 'homepage'),
-				{ sundayBibleStudy, sundayWorship, wednesdayBibleStudy },
-				{ merge: true }
-			);
-			status = 'Saved!';
-		} catch (e) {
-			status = `Error: ${e instanceof Error ? e.message : 'Unknown error'}`;
-		} finally {
-			saving = false;
-		}
-	}
+	$effect(() => {
+		// Read reactive values to track them
+		const values = { sundayBibleStudy, sundayWorship, wednesdayBibleStudy };
+
+		// Don't auto-save until initial load is complete
+		if (!untrack(() => loaded)) return;
+
+		const timeout = setTimeout(async () => {
+			try {
+				await setDoc(doc(database, 'content', 'homepage'), values, { merge: true });
+				saveStatus = 'Saved';
+				setTimeout(() => { saveStatus = ''; }, 2000);
+			} catch {
+				saveStatus = 'Error saving';
+			}
+		}, 800);
+
+		return () => clearTimeout(timeout);
+	});
 
 	load();
 </script>
 
 <section class="card">
-	<h2>Scripture Focus</h2>
+	<div class="card-header">
+		<h2>Scripture Focus</h2>
+		{#if saveStatus}
+			<span class="save-status" class:error={saveStatus.startsWith('Error')}>{saveStatus}</span>
+		{/if}
+	</div>
 
 	<label>
 		Sunday Bible Study
@@ -67,15 +77,6 @@
 		Wednesday Bible Study
 		<input type="text" bind:value={wednesdayBibleStudy} />
 	</label>
-
-	<div class="actions">
-		<button onclick={save} disabled={saving}>
-			{saving ? 'Saving...' : 'Save'}
-		</button>
-		{#if status}
-			<span class="status" class:error={status.startsWith('Error')}>{status}</span>
-		{/if}
-	</div>
 </section>
 
 <style>
@@ -86,10 +87,25 @@
 		box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
 	}
 
+	.card-header {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 1rem;
+	}
+
 	h2 {
 		font-size: 1.125rem;
 		font-weight: 600;
-		margin-bottom: 1rem;
+	}
+
+	.save-status {
+		font-size: 0.75rem;
+		color: #16a34a;
+	}
+
+	.save-status.error {
+		color: #dc2626;
 	}
 
 	label {
@@ -114,41 +130,5 @@
 	input:focus {
 		outline: 2px solid #78716c;
 		outline-offset: 1px;
-	}
-
-	.actions {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-	}
-
-	button {
-		background: #292524;
-		color: white;
-		border: none;
-		padding: 0.5rem 1rem;
-		border-radius: 6px;
-		font-size: 0.875rem;
-		font-weight: 500;
-		cursor: pointer;
-		font-family: inherit;
-	}
-
-	button:hover {
-		background: #44403c;
-	}
-
-	button:disabled {
-		opacity: 0.6;
-		cursor: not-allowed;
-	}
-
-	.status {
-		font-size: 0.875rem;
-		color: #16a34a;
-	}
-
-	.status.error {
-		color: #dc2626;
 	}
 </style>

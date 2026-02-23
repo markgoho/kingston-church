@@ -82,7 +82,7 @@
 
 			<section class="card publish-card">
 				<h2>Publish Changes</h2>
-				<p>After saving your changes above, click Publish to rebuild and deploy the website.</p>
+				<p>Changes are saved automatically. Click Publish to rebuild and deploy the website.</p>
 				<div class="actions">
 					<button class="publish-btn" onclick={publish} disabled={publishing}>
 						{publishing ? 'Publishing...' : 'Publish to Website'}

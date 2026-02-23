@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { database } from '$lib/firebase';
 	import { doc, getDoc, setDoc } from 'firebase/firestore';
+	import { untrack } from 'svelte';
 
 	let currentEvents = $state('');
-	let saving = $state(false);
-	let status = $state('');
+	let loaded = $state(false);
+	let saveStatus = $state('');
 
 	const defaultCurrentEvents = `Remember in prayer those with spiritual struggles and those absent from our regular assemblies. Also, remember those with ongoing physical struggles.
 
@@ -21,38 +22,42 @@ Every first Wednesday of the month will be a singing night. Join us as we encour
 			currentEvents = defaultCurrentEvents;
 			await setDoc(reference, { currentEvents: defaultCurrentEvents }, { merge: true });
 		}
+		loaded = true;
 	}
 
-	async function save() {
-		saving = true;
-		status = '';
-		try {
-			await setDoc(doc(database, 'content', 'homepage'), { currentEvents }, { merge: true });
-			status = 'Saved!';
-		} catch (e) {
-			status = `Error: ${e instanceof Error ? e.message : 'Unknown error'}`;
-		} finally {
-			saving = false;
-		}
-	}
+	$effect(() => {
+		// Read reactive value to track it
+		const value = currentEvents;
+
+		// Don't auto-save until initial load is complete
+		if (!untrack(() => loaded)) return;
+
+		const timeout = setTimeout(async () => {
+			try {
+				await setDoc(doc(database, 'content', 'homepage'), { currentEvents: value }, { merge: true });
+				saveStatus = 'Saved';
+				setTimeout(() => { saveStatus = ''; }, 2000);
+			} catch {
+				saveStatus = 'Error saving';
+			}
+		}, 800);
+
+		return () => clearTimeout(timeout);
+	});
 
 	load();
 </script>
 
 <section class="card">
-	<h2>Current Events / Announcements</h2>
+	<div class="card-header">
+		<h2>Current Events / Announcements</h2>
+		{#if saveStatus}
+			<span class="save-status" class:error={saveStatus.startsWith('Error')}>{saveStatus}</span>
+		{/if}
+	</div>
 	<p class="hint">Markdown is supported. This replaces the "Current Events" section on the homepage.</p>
 
 	<textarea bind:value={currentEvents} rows="10"></textarea>
-
-	<div class="actions">
-		<button onclick={save} disabled={saving}>
-			{saving ? 'Saving...' : 'Save'}
-		</button>
-		{#if status}
-			<span class="status" class:error={status.startsWith('Error')}>{status}</span>
-		{/if}
-	</div>
 </section>
 
 <style>
@@ -63,10 +68,25 @@ Every first Wednesday of the month will be a singing night. Join us as we encour
 		box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
 	}
 
+	.card-header {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 0.25rem;
+	}
+
 	h2 {
 		font-size: 1.125rem;
 		font-weight: 600;
-		margin-bottom: 0.25rem;
+	}
+
+	.save-status {
+		font-size: 0.75rem;
+		color: #16a34a;
+	}
+
+	.save-status.error {
+		color: #dc2626;
 	}
 
 	.hint {
@@ -84,47 +104,10 @@ Every first Wednesday of the month will be a singing night. Join us as we encour
 		font-size: 0.875rem;
 		font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
 		resize: vertical;
-		margin-bottom: 1rem;
 	}
 
 	textarea:focus {
 		outline: 2px solid #78716c;
 		outline-offset: 1px;
-	}
-
-	.actions {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-	}
-
-	button {
-		background: #292524;
-		color: white;
-		border: none;
-		padding: 0.5rem 1rem;
-		border-radius: 6px;
-		font-size: 0.875rem;
-		font-weight: 500;
-		cursor: pointer;
-		font-family: inherit;
-	}
-
-	button:hover {
-		background: #44403c;
-	}
-
-	button:disabled {
-		opacity: 0.6;
-		cursor: not-allowed;
-	}
-
-	.status {
-		font-size: 0.875rem;
-		color: #16a34a;
-	}
-
-	.status.error {
-		color: #dc2626;
 	}
 </style>
