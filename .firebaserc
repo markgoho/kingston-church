@@ -6,7 +6,7 @@
     "kingstonchurchofchrist-8a8f3": {
       "hosting": {
         "site": ["kingstonchurchofchrist-8a8f3"],
-        "admin": ["kingstonchurchofchrist-8a8f3-admin"]
+        "admin": ["kingston-church-admin"]
       }
     }
   }
