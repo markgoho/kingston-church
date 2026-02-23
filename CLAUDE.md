@@ -13,8 +13,13 @@ Kingston NY Church of Christ website — a Hugo static site deployed to Firebase
 - **Local build:** `npm run build:local` (cleans `public/` then builds)
 - **Lint SCSS:** `npm run lint` (stylelint with `--fix` on `hugo/assets/scss/**/*.scss`)
 - **Deploy:** `npm run deploy` (Firebase hosting deploy)
+- **Admin dev:** `cd admin && bun run dev`
+- **Admin build:** `cd admin && bun run build`
+- **Admin check:** `cd admin && bun run check` (svelte-check)
 
 Hugo requires the **extended** version (for Sass) and **Dart Sass** must be installed. See `Dockerfile` for exact versions (Hugo 0.156.0, Dart Sass 1.93.2).
+
+**Use `bun` (not npm) for the `admin/` SvelteKit app.** The lockfile is `bun.lock`.
 
 ## Architecture
 

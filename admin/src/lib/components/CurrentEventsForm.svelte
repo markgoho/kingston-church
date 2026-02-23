@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { db } from '$lib/firebase';
+	import { database } from '$lib/firebase';
 	import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 	let currentEvents = $state('');
@@ -13,13 +13,13 @@ Sunday morning in the book of John, we see Jesus is God and the reality that He 
 Every first Wednesday of the month will be a singing night. Join us as we encourage one another to learn new songs and praise God.`;
 
 	async function load() {
-		const ref = doc(db, 'content', 'homepage');
-		const snap = await getDoc(ref);
+		const reference = doc(database, 'content', 'homepage');
+		const snap = await getDoc(reference);
 		if (snap.exists()) {
 			currentEvents = snap.data().currentEvents ?? defaultCurrentEvents;
 		} else {
 			currentEvents = defaultCurrentEvents;
-			await setDoc(ref, { currentEvents: defaultCurrentEvents }, { merge: true });
+			await setDoc(reference, { currentEvents: defaultCurrentEvents }, { merge: true });
 		}
 	}
 
@@ -27,7 +27,7 @@ Every first Wednesday of the month will be a singing night. Join us as we encour
 		saving = true;
 		status = '';
 		try {
-			await setDoc(doc(db, 'content', 'homepage'), { currentEvents }, { merge: true });
+			await setDoc(doc(database, 'content', 'homepage'), { currentEvents }, { merge: true });
 			status = 'Saved!';
 		} catch (e) {
 			status = `Error: ${e instanceof Error ? e.message : 'Unknown error'}`;

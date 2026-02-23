@@ -1,4 +1,5 @@
-import { auth, db } from '$lib/firebase';
+// eslint-disable-next-line n/no-missing-import -- $lib is a SvelteKit alias
+import { auth, database } from '$lib/firebase';
 import {
 	GoogleAuthProvider,
 	onAuthStateChanged,
@@ -15,8 +16,10 @@ interface AuthState {
 }
 
 export const authState: AuthState = $state({
+	// eslint-disable-next-line unicorn/no-null -- Firebase Auth convention
 	user: null,
 	loading: true,
+	// eslint-disable-next-line unicorn/no-null -- not yet checked
 	allowed: null
 });
 
@@ -25,10 +28,11 @@ export function initAuth() {
 		authState.user = user;
 
 		if (user) {
-			const ref = doc(db, 'allowedUsers', user.email!);
-			const snap = await getDoc(ref);
+			const reference = doc(database, 'allowedUsers', user.email!);
+			const snap = await getDoc(reference);
 			authState.allowed = snap.exists();
 		} else {
+			// eslint-disable-next-line unicorn/no-null -- reset to unchecked state
 			authState.allowed = null;
 		}
 

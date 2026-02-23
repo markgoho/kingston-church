@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { authState, login, logout } from '$lib/auth.svelte.ts';
-	import { db } from '$lib/firebase';
+	import { database } from '$lib/firebase';
 	import { doc, getDoc } from 'firebase/firestore';
 	import ScriptureFocusForm from '$lib/components/ScriptureFocusForm.svelte';
 	import CurrentEventsForm from '$lib/components/CurrentEventsForm.svelte';
@@ -12,7 +12,7 @@
 		publishing = true;
 		publishStatus = '';
 		try {
-			const configSnap = await getDoc(doc(db, 'config', 'github'));
+			const configSnap = await getDoc(doc(database, 'config', 'github'));
 			if (!configSnap.exists()) {
 				publishStatus = 'Error: GitHub config not found in Firestore';
 				return;
@@ -20,7 +20,7 @@
 
 			const { pat } = configSnap.data();
 			const response = await fetch(
-				'https://api.github.com/repos/mgoho/kingston-church/dispatches',
+				'https://api.github.com/repos/markgoho/kingston-church/dispatches',
 				{
 					method: 'POST',
 					headers: {

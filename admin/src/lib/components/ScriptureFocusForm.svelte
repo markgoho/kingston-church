@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { db } from '$lib/firebase';
+	import { database } from '$lib/firebase';
 	import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 	let sundayBibleStudy = $state('');
@@ -15,8 +15,8 @@
 	};
 
 	async function load() {
-		const ref = doc(db, 'content', 'homepage');
-		const snap = await getDoc(ref);
+		const reference = doc(database, 'content', 'homepage');
+		const snap = await getDoc(reference);
 		if (snap.exists()) {
 			const data = snap.data();
 			sundayBibleStudy = data.sundayBibleStudy ?? defaults.sundayBibleStudy;
@@ -26,7 +26,7 @@
 			sundayBibleStudy = defaults.sundayBibleStudy;
 			sundayWorship = defaults.sundayWorship;
 			wednesdayBibleStudy = defaults.wednesdayBibleStudy;
-			await setDoc(ref, defaults, { merge: true });
+			await setDoc(reference, defaults, { merge: true });
 		}
 	}
 
@@ -35,7 +35,7 @@
 		status = '';
 		try {
 			await setDoc(
-				doc(db, 'content', 'homepage'),
+				doc(database, 'content', 'homepage'),
 				{ sundayBibleStudy, sundayWorship, wednesdayBibleStudy },
 				{ merge: true }
 			);

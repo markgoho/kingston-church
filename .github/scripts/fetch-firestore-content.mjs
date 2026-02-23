@@ -1,27 +1,24 @@
+// eslint-disable-next-line n/no-missing-import -- only installed in CI
 import { initializeApp, cert } from 'firebase-admin/app';
+// eslint-disable-next-line n/no-missing-import -- only installed in CI
 import { getFirestore } from 'firebase-admin/firestore';
 import { readFileSync, writeFileSync } from 'node:fs';
-import { resolve, dirname } from 'node:path';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const indexPath = resolve(__dirname, '../../hugo/content/_index.md');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const indexPath = path.resolve(__dirname, '../../hugo/content/_index.md');
 
 // Initialize Firebase Admin with service account from environment
 const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 initializeApp({ credential: cert(serviceAccount) });
-const db = getFirestore();
+const database = getFirestore();
 
-async function main() {
-  const snapshot = await db.collection('content').doc('homepage').get();
+const snapshot = await database.collection('content').doc('homepage').get();
 
-  if (!snapshot.exists) {
-    console.log('No homepage content found in Firestore, skipping update.');
-    return;
-  }
-
+if (snapshot.exists) {
   const data = snapshot.data();
-  const original = readFileSync(indexPath, 'utf-8');
+  const original = readFileSync(indexPath, 'utf8');
 
   // Parse the existing file into front matter and body
   const frontMatterMatch = original.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
@@ -57,11 +54,8 @@ wednesday:
   }
 
   const updatedContent = `${newFrontMatter}\n${newBody}`;
-  writeFileSync(indexPath, updatedContent, 'utf-8');
+  writeFileSync(indexPath, updatedContent, 'utf8');
   console.log('Successfully updated _index.md from Firestore content.');
+} else {
+  console.log('No homepage content found in Firestore, skipping update.');
 }
-
-main().catch((error) => {
-  console.error('Failed to fetch Firestore content:', error);
-  process.exit(1);
-});
