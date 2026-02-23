@@ -1,21 +1,22 @@
-const replace = require("replace-in-file");
+import { replaceInFileSync } from "replace-in-file";
+
 const options = {
   files: "./hugo/content/sermons/**/*.md",
   from: /(v1\/KingstonChurch\/)([\w\s]+)(\.mp3)/g,
-  to: (...args) => replaceSpacesWithUnderscores(args),
+  to: (...arguments_) => replaceSpacesWithUnderscores(arguments_),
 };
 
 try {
-  const changes = replace.sync(options);
+  const changes = replaceInFileSync(options);
   console.log("Modified files:", changes.join(", "));
 } catch (error) {
   console.error("Error occurred:", error);
 }
 
-function replaceSpacesWithUnderscores(args) {
-  const [fullString, startingPath, fileName, extension] = args;
+function replaceSpacesWithUnderscores(arguments_) {
+  const [, startingPath, fileName, extension] = arguments_;
 
-  const fixedFileName = fileName.replace(/\s/g, "_");
+  const fixedFileName = fileName.replaceAll(/\s/g, "_");
 
   return `${startingPath}${fixedFileName}${extension}`;
 }
