@@ -9,7 +9,11 @@
     "build": "cd hugo && hugo --minify",
     "build:local": "rm -rf public && npm run build",
     "deploy": "firebase deploy --only hosting",
-    "lint": "stylelint \"hugo/assets/scss/**/*.scss\" --fix"
+    "lint": "stylelint \"hugo/assets/scss/**/*.scss\" --fix",
+    "admin:dev": "cd admin && npm run dev",
+    "admin:build": "cd admin && npm run build",
+    "deploy:admin": "firebase deploy --only hosting:admin",
+    "deploy:rules": "firebase deploy --only firestore:rules"
   },
   "author": "",
   "license": "ISC",

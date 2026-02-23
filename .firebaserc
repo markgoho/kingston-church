@@ -1,5 +1,13 @@
 {
   "projects": {
     "default": "kingstonchurchofchrist-8a8f3"
+  },
+  "targets": {
+    "kingstonchurchofchrist-8a8f3": {
+      "hosting": {
+        "site": ["kingstonchurchofchrist-8a8f3"],
+        "admin": ["kingstonchurchofchrist-8a8f3-admin"]
+      }
+    }
   }
 }

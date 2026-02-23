@@ -95,3 +95,8 @@ hugo/resources/_gen/
 .firebase/
 
 .DS_Store
+
+# Admin app build artifacts
+admin/node_modules/
+admin/build/
+admin/.svelte-kit/

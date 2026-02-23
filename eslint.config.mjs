@@ -8,7 +8,7 @@ import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 export default [
   {
-    ignores: ["**/node_modules/", "**/public/", "**/resources/"],
+    ignores: ["**/node_modules/", "**/public/", "**/resources/", "admin/build/", "admin/.svelte-kit/"],
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,

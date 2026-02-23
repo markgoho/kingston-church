@@ -1,132 +1,150 @@
 {
-  "hosting": {
-    "public": "public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "headers": [
-      {
-        "source": "**/*.@(eot|otf|ttf|woff|woff2|font|css)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=31536000"
-          }
-        ]
-      },
-      {
-        "source": "**/*.@(jpg|jpeg|gif|png|ico|webp|svg|mp3)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=31536000"
-          }
-        ]
-      },
-      {
-        "source": "**/*.ico",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=604800"
-          },
-          {
-            "key": "Content-Type",
-            "value": "image/x-icon"
-          }
-        ]
-      },
-      {
-        "source": "**/*.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=31536000"
-          },
-          {
-            "key": "X-Content-Type-Options",
-            "value": "nosniff"
-          },
-          {
-            "key": "Content-Type",
-            "value": "text/javascript; charset=utf-8"
-          }
-        ]
-      },
-      {
-        "source": "**/*.css",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=31536000"
-          },
-          {
-            "key": "X-Content-Type-Options",
-            "value": "nosniff"
-          }
-        ]
-      },
-      {
-        "source": "**/manifest.json",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=604800"
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/manifest+json; charset=utf-8"
-          }
-        ]
-      },
-      {
-        "source": "**/site.webmanifest",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=604800"
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/manifest+json; charset=utf-8"
-          }
-        ]
-      }
-    ],
-    "redirects": [
-      {
-        "source": "/evolution{,/**}",
-        "destination": "/categories/evolution/",
-        "type": 301
-      },
-      {
-        "source": "/yahoo_site_admin/assets/docs/Worksheet_6.113150846.pdf",
-        "destination": "/studies/stewardship/",
-        "type": 301
-      },
-      {
-        "source": "/yahoo_site_admin/assets/docs/THE_THIRD_PERSON_IMPERATIVE_IN_THE_GREEK_NEW_TESTAMENT.31201317.pdf",
-        "destination": "/lessons/the-third-person-imperative-in-the-greek-new-testament/",
-        "type": 301
-      },
-      {
-        "source": "/yahoo_site_admin/assets/docs/Logos_Christology.113145548.pdf",
-        "destination": "/lessons/logos-christology-johannine-prologue/",
-        "type": 301
-      },
-      {
-        "source": "/yahoo_site_admin/assets/docs/Inerrancy.113145658.pdf",
-        "destination": "/lessons/challenge-to-faith-does-bible-err/",
-        "type": 301
-      },
-      {
-        "source": "/yahoo_site_admin/assets/docs/Appointed_Times_Critique.113154206.pdf",
-        "destination": "/lessons/appointed-times-nations-critical-analysis-watchtower/",
-        "type": 301
-      },
-      {
-        "source": "/yahoo_site_admin/assets/docs/Angels_in_Scripture.326135446.pdf",
-        "destination": "/lessons/angels-in-scripture/",
-        "type": 301
-      }
-    ]
+  "hosting": [
+    {
+      "target": "site",
+      "public": "public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**/*.@(eot|otf|ttf|woff|woff2|font|css)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(jpg|jpeg|gif|png|ico|webp|svg|mp3)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000"
+            }
+          ]
+        },
+        {
+          "source": "**/*.ico",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=604800"
+            },
+            {
+              "key": "Content-Type",
+              "value": "image/x-icon"
+            }
+          ]
+        },
+        {
+          "source": "**/*.js",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/javascript; charset=utf-8"
+            }
+          ]
+        },
+        {
+          "source": "**/*.css",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            }
+          ]
+        },
+        {
+          "source": "**/manifest.json",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=604800"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/manifest+json; charset=utf-8"
+            }
+          ]
+        },
+        {
+          "source": "**/site.webmanifest",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=604800"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/manifest+json; charset=utf-8"
+            }
+          ]
+        }
+      ],
+      "redirects": [
+        {
+          "source": "/evolution{,/**}",
+          "destination": "/categories/evolution/",
+          "type": 301
+        },
+        {
+          "source": "/yahoo_site_admin/assets/docs/Worksheet_6.113150846.pdf",
+          "destination": "/studies/stewardship/",
+          "type": 301
+        },
+        {
+          "source": "/yahoo_site_admin/assets/docs/THE_THIRD_PERSON_IMPERATIVE_IN_THE_GREEK_NEW_TESTAMENT.31201317.pdf",
+          "destination": "/lessons/the-third-person-imperative-in-the-greek-new-testament/",
+          "type": 301
+        },
+        {
+          "source": "/yahoo_site_admin/assets/docs/Logos_Christology.113145548.pdf",
+          "destination": "/lessons/logos-christology-johannine-prologue/",
+          "type": 301
+        },
+        {
+          "source": "/yahoo_site_admin/assets/docs/Inerrancy.113145658.pdf",
+          "destination": "/lessons/challenge-to-faith-does-bible-err/",
+          "type": 301
+        },
+        {
+          "source": "/yahoo_site_admin/assets/docs/Appointed_Times_Critique.113154206.pdf",
+          "destination": "/lessons/appointed-times-nations-critical-analysis-watchtower/",
+          "type": 301
+        },
+        {
+          "source": "/yahoo_site_admin/assets/docs/Angels_in_Scripture.326135446.pdf",
+          "destination": "/lessons/angels-in-scripture/",
+          "type": 301
+        }
+      ]
+    },
+    {
+      "target": "admin",
+      "public": "admin/build",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ],
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }
